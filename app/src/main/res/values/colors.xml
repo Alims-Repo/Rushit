@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1DA1F2</color>
+    <color name="colorPrimaryDark">#1DA1F2</color>
+    <color name="colorAccent">#1DA1F2</color>
+
+    //My Favourite
+    <color name="colorBlue">#1DA1F2</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#14171A</color>
+    <color name="colorDarkGray">#657786</color>
+    <color name="colorLightGray">#AAB8C2</color>
+    <color name="colorExtraLightGray">#E1E8ED</color>
+    <color name="colorExtraExtraLightGray">#F5F8FA</color>
+</resources>

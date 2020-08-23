@@ -32,10 +32,10 @@
     </FrameLayout>
 
     <com.alim.writer.Class.CircleImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:src="@drawable/profile"/>
 
     <TextView
@@ -45,7 +45,7 @@
         android:fontFamily="@font/noto_sans_bold"
         android:textSize="24sp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:textColor="@color/colorBlack"/>
 
     <TextView
@@ -69,10 +69,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorAccent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_image">
+        android:background="@drawable/rounded_account">
 
         <View
             android:id="@+id/view2"
@@ -88,7 +86,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="80dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/view2"
@@ -145,53 +143,27 @@
     <LinearLayout
         android:id="@+id/data_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/colorLightGray"
-        android:background="@drawable/rounded_image"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-64dp"
+        android:layout_marginBottom="-32dp"
+        android:paddingBottom="32dp"
+        android:backgroundTint="@color/colorBlack"
+        android:background="@drawable/rounded_account"
         android:orientation="vertical">
 
         <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_profile"
             style="@style/Widget.MaterialComponents.TabLayout.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabTextColor="@color/colorWhite"
             android:backgroundTint="@color/colorBlack"
-            app:tabIndicatorColor="@color/colorAccent">
+            app:tabIndicatorColor="@color/colorAccent"/>
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Posts" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Videos"/>
-
-        </com.google.android.material.tabs.TabLayout>
-
-        <ScrollView
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/profile_view_pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <include layout="@layout/profile_post"/>
-                <include layout="@layout/profile_post"/>
-                <include layout="@layout/profile_post"/>
-                <include layout="@layout/profile_post"/>
-                <include layout="@layout/profile_post"/>
-                <include layout="@layout/profile_post"/>
-
-            </LinearLayout>
-
-        </ScrollView>
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 

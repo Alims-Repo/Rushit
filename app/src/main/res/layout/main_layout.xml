@@ -20,7 +20,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="58dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal">
 
         <TextView
@@ -48,36 +49,59 @@
 
     </LinearLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
         android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="This is a long description"/>
+
+        <ImageView
+            android:id="@+id/post_image"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:src="@drawable/test"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="centerCrop"
+            android:transitionName="profile"
+            android:foreground="?attr/selectableItemBackground"
+            android:background="@drawable/rounded_image"
+            android:layout_marginTop="8dp"/>
 
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="210dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginStart="16dp">
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center_vertical"
                 android:src="@drawable/icon_msg"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
-                android:layout_marginTop="24dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="28dp"
+                android:layout_gravity="center_vertical"
                 android:fontFamily="@font/noto_sans_bold"/>
 
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="0dp"
                 android:src="@drawable/fav_icon"
                 android:layout_gravity="center"/>
 
@@ -85,46 +109,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
-                android:layout_marginTop="16dp"
-                android:layout_gravity="center_horizontal|center"
+                android:layout_marginStart="28dp"
+                android:layout_gravity="center_vertical|center"
                 android:fontFamily="@font/noto_sans_bold"/>
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_baseline_share_24"
-                android:layout_gravity="bottom|center_horizontal"/>
+                android:layout_gravity="end|center_vertical"/>
 
         </FrameLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="58dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="This is a long description"/>
-
-            <ImageView
-                android:id="@+id/post_image"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:src="@drawable/profile"
-                android:clickable="true"
-                android:focusable="true"
-                android:scaleType="centerCrop"
-                android:transitionName="profile"
-                android:foreground="?attr/selectableItemBackground"
-                android:background="@drawable/rounded_image"
-                android:layout_marginTop="8dp"/>
-
-        </LinearLayout>
-
-    </FrameLayout>
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"

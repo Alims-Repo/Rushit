@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alim.rushit.Adapter.HomeAdapter
+import com.alim.rushit.Config
 import com.alim.rushit.R
 
 class HomeFragment : Fragment() {
@@ -21,9 +22,18 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val data: ArrayList<Int> = ArrayList()
-        for (x in 0..20)
-            data.add(112)
+        val data: ArrayList<String> = ArrayList()
+
+        data.add(Config.one)
+        data.add(Config.two)
+        data.add(Config.three)
+        data.add(Config.four)
+        data.add(Config.five)
+        data.add(Config.six)
+        data.add(Config.seven)
+        data.add(Config.eight)
+        data.add(Config.nine)
+        data.add(Config.ten)
 
         layoutManager = LinearLayoutManager(activity!!)
         recyclerView = rootView.findViewById(R.id.main_recycler)

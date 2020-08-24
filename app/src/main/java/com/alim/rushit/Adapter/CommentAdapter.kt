@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alim.rushit.PostViewActivity
 import com.alim.rushit.ProfileActivity
 import com.alim.rushit.R
-import com.bumptech.glide.Glide
 
 class CommentAdapter(context: Context, data: ArrayList<String>):
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

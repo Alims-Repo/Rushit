@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.alim.rushit.Adapter.FollowAdapter
 import com.alim.rushit.Adapter.MessageAdapter
-import com.alim.rushit.Config
+import com.alim.rushit.Config.Config
 import com.alim.rushit.R
 
 class MessagesFragment : Fragment() {

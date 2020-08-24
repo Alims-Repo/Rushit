@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alim.rushit.Adapter.CommentAdapter
-import com.alim.rushit.Adapter.FollowAdapter
+import com.alim.rushit.Config.Config
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_post_view.*
 

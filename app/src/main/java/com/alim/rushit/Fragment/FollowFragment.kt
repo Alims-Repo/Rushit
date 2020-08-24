@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alim.rushit.Adapter.HomeAdapter
-import com.alim.rushit.Config
+import com.alim.rushit.Config.Config
 import com.alim.rushit.R
 import com.facebook.shimmer.ShimmerFrameLayout
 

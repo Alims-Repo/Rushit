@@ -1,5 +1,6 @@
 package com.alim.rushit.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -9,20 +10,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alim.rushit.Adapter.FollowAdapter
-import com.alim.rushit.Adapter.HomeAdapter
-import com.alim.rushit.Config
+import com.alim.rushit.Config.Config
+import com.alim.rushit.PostActivity
 import com.alim.rushit.R
 import com.facebook.shimmer.ShimmerFrameLayout
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeFragment : Fragment() {
-
 
     val data: ArrayList<String> = ArrayList()
     lateinit var recyclerView: RecyclerView
     lateinit var shimmer: ShimmerFrameLayout
     private lateinit var adapter: FollowAdapter
+    private lateinit var fab: FloatingActionButton
     private lateinit var layoutManager: RecyclerView.LayoutManager
 
     override fun onCreateView(
@@ -31,6 +31,7 @@ class HomeFragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
         shimmer = rootView.findViewById(R.id.shimmer_home)
+        fab = rootView.findViewById(R.id.fab)
 
         layoutManager = LinearLayoutManager(activity!!)
         recyclerView = rootView.findViewById(R.id.main_recycler)
@@ -60,6 +61,10 @@ class HomeFragment : Fragment() {
             shimmer.visibility = View.GONE
             recyclerView.visibility = View.VISIBLE
             adapter.notifyDataSetChanged()
+        }
+
+        fab.setOnClickListener {
+            startActivity(Intent(activity!!, PostActivity::class.java))
         }
 
         return rootView

@@ -15,7 +15,10 @@ import com.alim.rushit.Fragment.HomeFragment
 import com.alim.rushit.Fragment.MessagesFragment
 import com.alim.rushit.Fragment.FollowFragment
 import com.alim.rushit.Fragment.SettingsFragment
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -81,5 +84,26 @@ class MainActivity : AppCompatActivity() {
         search_icon.setOnClickListener {
             startActivity(Intent(this, SearchActivity::class.java))
         }
+
+        initiatNotification()
+    }
+
+    private fun initiatNotification() {
+        FirebaseMessaging.getInstance().isAutoInitEnabled = true
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.e("TAG", "getInstanceId failed", task.exception)
+                    return@OnCompleteListener
+                }
+
+                // Get new Instance ID token
+                val token = task.result?.token
+
+                // Log and toast
+                val msg = getString(R.string.msg_token_fmt, token)
+                Log.e("TAG", msg)
+                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+            })
     }
 }

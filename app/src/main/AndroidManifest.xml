@@ -3,6 +3,7 @@
     package="com.alim.rushit">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application
         android:allowBackup="true"
@@ -11,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchActivity"
-            android:theme="@style/AppThemeSplash"/>
+        <activity android:name=".PostActivity"/>
+        <activity
+            android:name=".SearchActivity"
+            android:theme="@style/AppThemeSplash" />
         <activity
             android:name=".ProfileActivity"
             android:label="@string/title_activity_profile"
@@ -37,6 +40,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".Services.FirebaseService"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
 
         <meta-data
             android:name="preloaded_fonts"

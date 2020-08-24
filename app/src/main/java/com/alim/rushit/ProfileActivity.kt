@@ -17,6 +17,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+        back_icon.setOnClickListener { onBackPressed() }
         data_container.clipToOutline = true
 
         viewPager = findViewById(R.id.profile_view_pager)

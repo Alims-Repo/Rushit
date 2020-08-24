@@ -14,7 +14,7 @@ import com.alim.rushit.ProfileActivity
 import com.alim.rushit.R
 import com.bumptech.glide.Glide
 
-class HomeAdapter(context: Context, data: ArrayList<String>):
+class FollowAdapter(context: Context, data: ArrayList<String>):
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val mData = data

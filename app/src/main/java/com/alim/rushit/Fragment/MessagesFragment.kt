@@ -1,25 +1,27 @@
-package com.alim.rushit
+package com.alim.rushit.Fragment
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.alim.rushit.Adapter.CommentAdapter
 import com.alim.rushit.Adapter.FollowAdapter
-import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_post_view.*
+import com.alim.rushit.Adapter.MessageAdapter
+import com.alim.rushit.Config
+import com.alim.rushit.R
 
-class PostViewActivity : AppCompatActivity() {
+class MessagesFragment : Fragment() {
 
     lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: CommentAdapter
+    private lateinit var adapter: MessageAdapter
     private lateinit var layoutManager: RecyclerView.LayoutManager
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_post_view)
-        toolbar.setNavigationOnClickListener { onBackPressed() }
-        Glide.with(this).load(intent.getStringExtra("IMAGE_LINK")).into(post_image)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
+        val rootView = inflater.inflate(R.layout.fragment_messages, container, false)
 
         val data: ArrayList<String> = ArrayList()
 
@@ -34,11 +36,13 @@ class PostViewActivity : AppCompatActivity() {
         data.add(Config.two)
         data.add(Config.eight)
 
-        layoutManager = LinearLayoutManager(this)
-        recyclerView = findViewById(R.id.comment_recycler)
+        layoutManager = LinearLayoutManager(activity!!)
+        recyclerView = rootView.findViewById(R.id.message_recycler)
         recyclerView.layoutManager = layoutManager
-        adapter = CommentAdapter(this, data)
+        adapter = MessageAdapter(activity!!, data)
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
+
+        return rootView
     }
 }

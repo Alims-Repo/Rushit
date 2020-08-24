@@ -1,63 +1,34 @@
 {
   "project_info": {
-    "project_number": "264201670007",
-    "firebase_url": "https://snap-loader.firebaseio.com",
-    "project_id": "snap-loader",
-    "storage_bucket": "snap-loader.appspot.com"
+    "project_number": "29005148303",
+    "firebase_url": "https://rush-it-8bd55.firebaseio.com",
+    "project_id": "rush-it-8bd55",
+    "storage_bucket": "rush-it-8bd55.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:264201670007:android:a6b1bc2a291d791ba5e572",
+        "mobilesdk_app_id": "1:29005148303:android:74f896f4a7e84c80ad80fa",
         "android_client_info": {
           "package_name": "com.alim.rushit"
         }
       },
       "oauth_client": [
         {
-          "client_id": "264201670007-gdb47sv0adkk8krevuenkdus82dpistl.apps.googleusercontent.com",
+          "client_id": "29005148303-1mbt1jv9sjgnr6gre1nfdaotvebjmi7v.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCr1D-cI651RV2iOtqtzv7TED9PkWUIipU"
+          "current_key": "AIzaSyBBlbAXk7RjUsaskusYtJr2j-Qr_bNnMY8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "264201670007-gdb47sv0adkk8krevuenkdus82dpistl.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:264201670007:android:bc9a1ce98d761c00a5e572",
-        "android_client_info": {
-          "package_name": "com.alim.snaploader"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "264201670007-gdb47sv0adkk8krevuenkdus82dpistl.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCr1D-cI651RV2iOtqtzv7TED9PkWUIipU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "264201670007-gdb47sv0adkk8krevuenkdus82dpistl.apps.googleusercontent.com",
+              "client_id": "29005148303-1mbt1jv9sjgnr6gre1nfdaotvebjmi7v.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

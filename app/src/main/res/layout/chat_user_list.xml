@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:paddingTop="8dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginEnd="8dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+    <com.alim.writer.Class.CircleImageView
+        android:id="@+id/chat_logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/profile"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:fontFamily="@font/noto_sans_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Message will appear here"
+            android:textColor="@color/colorBlack"
+            android:layout_marginBottom="4dp"
+            android:textSize="16sp"
+            android:maxLines="1"
+            android:layout_gravity="bottom" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_account"/>
+
+    </FrameLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorExtraLightGray"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

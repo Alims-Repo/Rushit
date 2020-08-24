@@ -8,21 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.alim.rushit.Adapter.FollowAdapter
 import com.alim.rushit.Adapter.HomeAdapter
 import com.alim.rushit.Config
 import com.alim.rushit.R
 import com.facebook.shimmer.ShimmerFrameLayout
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment() {
-
+class FollowFragment : Fragment() {
 
     val data: ArrayList<String> = ArrayList()
     lateinit var recyclerView: RecyclerView
     lateinit var shimmer: ShimmerFrameLayout
-    private lateinit var adapter: FollowAdapter
+    private lateinit var adapter: HomeAdapter
     private lateinit var layoutManager: RecyclerView.LayoutManager
 
     override fun onCreateView(
@@ -35,23 +31,23 @@ class HomeFragment : Fragment() {
         layoutManager = LinearLayoutManager(activity!!)
         recyclerView = rootView.findViewById(R.id.main_recycler)
         recyclerView.layoutManager = layoutManager
-        adapter = FollowAdapter(activity!!, data)
+        adapter = HomeAdapter(activity!!, data)
         recyclerView.adapter = adapter
 
         if (data.size<1) {
             shimmer.visibility = View.VISIBLE
             shimmer.startShimmer()
             Handler().postDelayed({
-                data.add(Config.ten)
-                data.add(Config.five)
-                data.add(Config.seven)
-                data.add(Config.three)
                 data.add(Config.one)
-                data.add(Config.four)
-                data.add(Config.six)
-                data.add(Config.nine)
                 data.add(Config.two)
+                data.add(Config.three)
+                data.add(Config.four)
+                data.add(Config.five)
+                data.add(Config.six)
+                data.add(Config.seven)
                 data.add(Config.eight)
+                data.add(Config.nine)
+                data.add(Config.ten)
                 shimmer.visibility = View.GONE
                 recyclerView.visibility = View.VISIBLE
                 adapter.notifyDataSetChanged()

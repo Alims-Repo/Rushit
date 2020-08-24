@@ -39,12 +39,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
+                app:boxCornerRadiusTopStart="26dp"
+                app:boxCornerRadiusBottomEnd="26dp"
+                app:boxCornerRadiusBottomStart="26dp"
+                app:boxCornerRadiusTopEnd="26dp"
                 android:layout_marginTop="32dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
+                    android:paddingStart="32dp"
                     android:hint="Name"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -55,12 +61,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
+                app:boxCornerRadiusTopStart="26dp"
+                app:boxCornerRadiusBottomEnd="26dp"
+                app:boxCornerRadiusBottomStart="26dp"
+                app:boxCornerRadiusTopEnd="26dp"
                 android:layout_marginTop="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
+                    android:paddingStart="32dp"
                     android:hint="Email"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -72,12 +84,18 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginTop="16dp"
+                app:boxCornerRadiusTopStart="26dp"
+                app:boxCornerRadiusBottomEnd="26dp"
+                app:boxCornerRadiusBottomStart="26dp"
+                app:boxCornerRadiusTopEnd="26dp"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
+                    android:paddingStart="32dp"
                     android:hint="Password"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -89,25 +107,50 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginTop="16dp"
+                app:boxCornerRadiusTopStart="26dp"
+                app:boxCornerRadiusBottomEnd="26dp"
+                app:boxCornerRadiusBottomStart="26dp"
+                app:boxCornerRadiusTopEnd="26dp"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/v_pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
+                    android:paddingStart="32dp"
                     android:hint="Verify Password"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:text="Register"
-                android:textAllCaps="false"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                app:cornerRadius="26dp"/>
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/signup_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:padding="12dp"
+                    android:visibility="gone"
+                    android:elevation="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_gravity="end"
+                    android:indeterminateTint="@color/colorWhite"
+                    android:layout_height="56dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Register"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    app:cornerRadius="26dp"/>
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -144,6 +187,7 @@
                     android:textSize="16sp"/>
 
                 <TextView
+                    android:id="@+id/sign_in"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sign In"

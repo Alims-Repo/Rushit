@@ -9,11 +9,16 @@
     <item
         android:title="Home"
         android:id="@+id/search"
-        android:icon="@drawable/ic_baseline_search_24"/>
+        android:icon="@drawable/ic_follow"/>
 
     <item
         android:title="Messages"
         android:id="@+id/chat"
         android:icon="@drawable/ic_baseline_chat_24"/>
+
+    <item
+        android:title="Settings"
+        android:id="@+id/settigs"
+        android:icon="@drawable/ic_baseline_settings_24"/>
 
 </menu>

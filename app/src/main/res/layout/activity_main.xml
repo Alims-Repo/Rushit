@@ -34,25 +34,28 @@
                     android:layout_marginEnd="20dp">
 
                     <com.alim.writer.Class.CircleImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:id="@+id/open_profile"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginStart="8dp"
                         android:src="@drawable/profile"
                         app:civ_border_color="@color/colorBlack"
                         app:civ_border_width=".5dp" />
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
                         android:src="@drawable/logo" />
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:id="@+id/search_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:foreground="?attr/selectableItemBackground"
                         android:layout_gravity="end"
                         android:layout_marginEnd="8dp"
-                        android:src="@drawable/ic_baseline_settings_24" />
+                        android:src="@drawable/ic_baseline_search_24" />
 
                 </FrameLayout>
 
@@ -60,11 +63,11 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <FrameLayout
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/main_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

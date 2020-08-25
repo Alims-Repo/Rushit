@@ -7,18 +7,23 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.alim.rushit.R
 import com.facebook.shimmer.ShimmerFrameLayout
-
+import com.google.firebase.messaging.FirebaseMessaging
+import kotlinx.android.synthetic.main.fragment_settings.view.*
 
 class SettingsFragment : Fragment() {
 
+    val TOPIC = "/topics/myTopic2"
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_settings, container, false)
 
-        val container = rootView.findViewById(R.id.shimmer_view_container) as ShimmerFrameLayout
-        container.startShimmer()
+        rootView.theme_switch.setOnCheckedChangeListener { compoundButton, b ->
+            if (b)
+                FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
+            else FirebaseMessaging.getInstance().unsubscribeFromTopic(TOPIC)
+        }
 
         return rootView
     }

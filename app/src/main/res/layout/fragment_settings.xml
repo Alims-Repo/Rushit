@@ -1,10 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.SettingsFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.SettingsFragment"
+    android:orientation="vertical">
 
-    <include layout="@layout/home_shimmer"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="16dp"
+        android:textSize="16sp"
+        android:background="#EDEDED"/>
 
-</FrameLayout>
+    <FrameLayout
+        android:id="@+id/theme"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/ex_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Turn on notification"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            android:layout_gravity="center_vertical"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="80dp"
+            android:background="#40888888"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/theme_switch"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingEnd="16dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+</LinearLayout>

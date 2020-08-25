@@ -48,6 +48,16 @@ class FollowFragment : Fragment() {
                 data.add(Config.eight)
                 data.add(Config.nine)
                 data.add(Config.ten)
+                data.add(Config.one)
+                data.add(Config.two)
+                data.add(Config.three)
+                data.add(Config.four)
+                data.add(Config.five)
+                data.add(Config.six)
+                data.add(Config.seven)
+                data.add(Config.eight)
+                data.add(Config.nine)
+                data.add(Config.ten)
                 shimmer.visibility = View.GONE
                 recyclerView.visibility = View.VISIBLE
                 adapter.notifyDataSetChanged()

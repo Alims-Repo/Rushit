@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/friend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.alim.writer.Class.CircleImageView
+            android:id="@+id/friend_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/profile"/>
+
+        <TextView
+            android:id="@+id/friend_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test messages..."
+            android:background="@drawable/rounded_edit"
+            android:layout_marginStart="56dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:textColor="@color/colorBlack"
+            android:paddingBottom="8dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="4dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end">
+
+        <TextView
+            android:id="@+id/my_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test messages..."
+            android:background="@drawable/rounded_edit"
+            android:layout_marginEnd="16dp"
+            android:paddingStart="16dp"
+            android:backgroundTint="@color/colorAccent"
+            android:paddingEnd="16dp"
+            android:textColor="@color/colorWhite"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:layout_marginStart="64dp"
+            android:layout_marginBottom="4dp"/>
+
+    </FrameLayout>
+
+</FrameLayout>

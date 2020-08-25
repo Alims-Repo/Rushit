@@ -53,12 +53,6 @@ X
 (app/src/main/res/drawable/ic_comment.xml,6\d\6dbe38d8f5bf39364c3ff2151e39515b419b66f8
 W
 'app/src/main/res/drawable/ic_follow.xml,f\b\fb49d1036f99a4b5d518948734372351e4c824ba
-[
-+app/src/main/res/drawable/rounded_image.xml,3\e\3e3c15aefea6c19490a5a195f21303a31f3517e5
-Y
-)app/src/main/res/layout/activity_main.xml,7\6\76b07e40f24cce093536731477540f12e7da3cb6
-^
-.app/src/main/res/layout/activity_post_view.xml,3\4\34b737c16a269bb967afeb0b6fcb2d9124a874bc
 \
 ,app/src/main/res/layout/activity_profile.xml,4\f\4feb8df09bb6546108e9d5489cd9c002981d116c
 [
@@ -71,16 +65,12 @@ Z
 *app/src/main/res/layout/chat_user_list.xml,e\6\e6ae2ad85cb34c80c66f7dee8f49adc10127afc9
 ]
 -app/src/main/res/layout/fragment_messages.xml,4\3\43334afc4330561d83aa0c4f2ec918b785d9233b
-]
--app/src/main/res/layout/fragment_settings.xml,4\f\4fc5b33bc32b9fda83e2938a513ac8733024f0ff
 X
 (app/src/main/res/layout/home_shimmer.xml,6\c\6c7e3d6e576e460dcc348372269d6c062c078a8e
 X
 (app/src/main/res/layout/profile_post.xml,9\7\97f568556057a9dbc85169b6fa9c70f0454beac6
 X
 (app/src/main/res/layout/shimmer_main.xml,c\1\c1ff649104931505755f8f2670f5c48043989416
-U
-%app/src/main/res/menu/bottom_menu.xml,7\a\7a1d43f2cd7aa41f89c4f7b135fd704c0f4b9254
 k
 ;app/src/main/java/com/alim/rushit/Adapter/CommentAdapter.kt,2\b\2b0d6208b127fec81a1eb7a0e240f4a36a49eb2f
 j
@@ -121,3 +111,5 @@ m
 =app/src/main/java/com/alim/rushit/Services/FirebaseService.kt,b\b\bbca7f1fc9aeb1008c882abd6614abc4be1a6e6b
 a
 1app/src/main/java/com/alim/rushit/PostActivity.kt,5\4\5472761a6c5fd9b068571aa5eea9b40b4e5227a5
+b
+2app/src/main/res/drawable/ic_baseline_close_24.xml,5\b\5b14537d1fdb1402316ac58f3544f15fc5a2484c

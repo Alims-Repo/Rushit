@@ -1,5 +1,6 @@
 package com.alim.rushit.Services
 
+import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.NotificationManager.IMPORTANCE_HIGH
@@ -12,9 +13,13 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Build
 import android.util.Log
+import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.app.NotificationCompat
+import com.alim.rushit.Config.Config
 import com.alim.rushit.PostActivity
+import com.alim.rushit.PostViewActivity
 import com.alim.rushit.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -48,7 +53,9 @@ class FirebaseService : FirebaseMessagingService() {
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
 
-        val intent = Intent(this, PostActivity::class.java)
+        val intent = Intent(this, PostViewActivity::class.java)
+        intent.putExtra("IMAGE_LINK", Config.three)
+
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val notificationID = Random.nextInt()
 
@@ -79,7 +86,7 @@ class FirebaseService : FirebaseMessagingService() {
             NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(message.data["title"])
                 .setContentText(message.data["message"])
-                .setSmallIcon(R.drawable.ic_follow)
+                .setSmallIcon(R.drawable.logo)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .build()

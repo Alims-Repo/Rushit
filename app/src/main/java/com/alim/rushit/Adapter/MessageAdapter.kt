@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.alim.rushit.ChatActivity
 import com.alim.rushit.PostViewActivity
 import com.alim.rushit.ProfileActivity
 import com.alim.rushit.R
@@ -33,6 +34,9 @@ class MessageAdapter(context: Context, data: ArrayList<String>):
     override fun onBindViewHolder(holder: MessageAdapter.ViewHolder, position: Int) {
         Glide.with(mContext).load(mData[position])
             .centerCrop().into(holder.chat_logo)
+        holder.itemView.setOnClickListener {
+            mContext.startActivity(Intent(mContext, ChatActivity::class.java))
+        }
     }
 
     override fun getItemCount(): Int {

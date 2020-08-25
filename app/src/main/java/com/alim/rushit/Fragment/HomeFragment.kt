@@ -22,7 +22,6 @@ class HomeFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var shimmer: ShimmerFrameLayout
     private lateinit var adapter: FollowAdapter
-    private lateinit var fab: FloatingActionButton
     private lateinit var layoutManager: RecyclerView.LayoutManager
 
     override fun onCreateView(
@@ -31,7 +30,6 @@ class HomeFragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
         shimmer = rootView.findViewById(R.id.shimmer_home)
-        fab = rootView.findViewById(R.id.fab)
 
         layoutManager = LinearLayoutManager(activity!!)
         recyclerView = rootView.findViewById(R.id.main_recycler)
@@ -53,6 +51,16 @@ class HomeFragment : Fragment() {
                 data.add(Config.nine)
                 data.add(Config.two)
                 data.add(Config.eight)
+                data.add(Config.ten)
+                data.add(Config.five)
+                data.add(Config.seven)
+                data.add(Config.three)
+                data.add(Config.one)
+                data.add(Config.four)
+                data.add(Config.six)
+                data.add(Config.nine)
+                data.add(Config.two)
+                data.add(Config.eight)
                 shimmer.visibility = View.GONE
                 recyclerView.visibility = View.VISIBLE
                 adapter.notifyDataSetChanged()
@@ -61,10 +69,6 @@ class HomeFragment : Fragment() {
             shimmer.visibility = View.GONE
             recyclerView.visibility = View.VISIBLE
             adapter.notifyDataSetChanged()
-        }
-
-        fab.setOnClickListener {
-            startActivity(Intent(activity!!, PostActivity::class.java))
         }
 
         return rootView

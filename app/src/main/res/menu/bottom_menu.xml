@@ -7,7 +7,7 @@
         android:icon="@drawable/home"/>
 
     <item
-        android:title="Home"
+        android:title="Following"
         android:id="@+id/search"
         android:icon="@drawable/ic_follow"/>
 

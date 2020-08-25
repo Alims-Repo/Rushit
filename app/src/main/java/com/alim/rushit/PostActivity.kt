@@ -1,64 +1,41 @@
 package com.alim.rushit
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.alim.rushit.Config.Config
-import com.alim.rushit.FCM.NotificationData
-import com.alim.rushit.FCM.PushNotification
-import com.alim.rushit.FCM.RetrofitInstance
-import com.alim.rushit.Services.FirebaseService
-import com.google.firebase.iid.FirebaseInstanceId
-import com.google.firebase.messaging.FirebaseMessaging
-import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_main.*
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.Button
+import android.widget.EditText
+import androidx.core.widget.addTextChangedListener
 import kotlinx.android.synthetic.main.activity_post.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class PostActivity : AppCompatActivity() {
 
-    val TOPIC = "/topics/myTopic2"
-    val TAG = "MainActivity"
+    lateinit var postButton: Button
+    lateinit var postText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post)
-        FirebaseService.sharedPref = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
-        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener {
-            FirebaseService.token = it.token
-            token_n.setText(it.token)
-        }
-        FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
+        close.setOnClickListener { finish() }
 
-        notify_button.setOnClickListener {
-            val title = title_n.text.toString()
-            val message = description_n.text.toString()
-            val recipientToken = token_n.text.toString()
-            if(title.isNotEmpty() && message.isNotEmpty() && recipientToken.isNotEmpty()) {
-                PushNotification(
-                    NotificationData(title, message, Config.seven,"PostActivity"),
-                    TOPIC
-                ).also {
-                    sendNotification(it)
-                }
+        postText = findViewById(R.id.post_text)
+        postButton = findViewById(R.id.post)
+
+        postText.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                postButton.isEnabled = p0.toString().isNotEmpty()
             }
-        }
-    }
 
-    private fun sendNotification(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch {
-        try {
-            val response = RetrofitInstance.api.postNotification(notification)
+            override fun afterTextChanged(p0: Editable?) {}
 
-            if(response.isSuccessful) {
-                //Log.e(TAG, "Response: ${Gson().toJson(response)}")
-            } else {
-                //Log.e(TAG, response.errorBody().toString())
-            }
-        } catch(e: Exception) {
-            Log.e(TAG, e.toString())
+        })
+
+        postText.setOnEditorActionListener { textView, i, keyEvent ->
+
+            true
         }
     }
 }

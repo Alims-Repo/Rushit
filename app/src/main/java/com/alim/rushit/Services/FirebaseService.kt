@@ -1,6 +1,5 @@
 package com.alim.rushit.Services
 
-import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.NotificationManager.IMPORTANCE_HIGH
@@ -15,15 +14,13 @@ import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
-import com.alim.rushit.MainActivity
+import com.alim.rushit.PostActivity
 import com.alim.rushit.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import java.io.IOException
 import java.io.InputStream
 import java.lang.Exception
 import java.net.HttpURLConnection
-import java.net.MalformedURLException
 import java.net.URL
 import kotlin.random.Random
 
@@ -51,7 +48,7 @@ class FirebaseService : FirebaseMessagingService() {
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
 
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, PostActivity::class.java)
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val notificationID = Random.nextInt()
 
@@ -88,7 +85,7 @@ class FirebaseService : FirebaseMessagingService() {
                 .build()
         }
 
-        Log.e("TAG", message.data["activit"]!!)
+        //Log.e("TAG", message.data["activit"]!!)
 
         notificationManager.notify(notificationID, notification)
     }
